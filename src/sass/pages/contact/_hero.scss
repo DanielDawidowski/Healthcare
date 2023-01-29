@@ -1,0 +1,86 @@
+.contact {
+    background: linear-gradient(
+        0deg,
+        rgba(255, 255, 255, 1) 0%,
+        rgba(255, 255, 255, 1) 60%,
+        rgba(62, 100, 94, 1) 60%,
+        rgba(62, 100, 94, 1) 100%
+    );
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &__hero {
+        display: grid;
+        grid-template-areas:
+            "a"
+            "b"
+            "c"
+            "d";
+        padding: $size6 0;
+        place-items: center;
+        @media (min-width: $layout-breakpoint-small) {
+            grid-template-areas:
+                "a b"
+                "d c"
+                "d c";
+            margin: $size6 0;
+        }
+        & > * {
+            margin: $size3 $size2;
+        }
+        &-title {
+            grid-area: a;
+            text-align: left;
+            margin: $size4 $size2;
+            @media (min-width: $layout-breakpoint-small) {
+                margin: $size4 0;
+            }
+            h1 {
+                color: $white;
+            }
+        }
+        &-subtitle {
+            grid-area: b;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            h3 {
+                width: 100%;
+                color: $white;
+                @media (min-width: $layout-breakpoint-small) {
+                    line-height: 1.4;
+                }
+            }
+        }
+        &-img {
+            grid-area: c;
+            place-content: center;
+            img {
+                max-width: 100%;
+            }
+        }
+        &-content {
+            grid-area: d;
+            width: 100%;
+            @media (min-width: $layout-breakpoint-small) {
+            }
+            p {
+                padding: $size1;
+            }
+        }
+    }
+}
+// &-subtitle {
+//     display: flex;
+//     justify-content: center;
+//     align-items: center;
+//     h3 {
+//         width: 100%;
+//         @media (max-width: $layout-breakpoint-xsmall) {
+//             line-height: 1.4;
+//             text-align: center;
+//             width: 60%;
+//         }
+//     }
+// }

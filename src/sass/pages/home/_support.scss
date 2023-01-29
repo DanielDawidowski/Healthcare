@@ -1,0 +1,40 @@
+.home__support {
+    width: 100%;
+    background-image: url("../../../assets/Images/hero/support1.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    @media (min-width: $layout-breakpoint-small) {
+        background-image: url("../../../assets/Images/hero/supportBig.png");
+        padding: $size6 0;
+        height: 80vh;
+    }
+    & > * {
+        text-align: center;
+        padding: $size2 0;
+        @media (min-width: $layout-breakpoint-xsmall) {
+            padding: $size4 0;
+        }
+        @media (min-width: $layout-breakpoint-small) {
+            padding: $size6 0;
+        }
+    }
+    h2 {
+        font-size: $size3;
+        @media (min-width: $layout-breakpoint-small) {
+            font-size: $size4;
+        }
+    }
+
+    h1 {
+        width: 60%;
+        line-height: 1.6;
+        @media (min-width: $layout-breakpoint-small) {
+            width: 70%;
+        }
+    }
+}

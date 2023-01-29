@@ -1,0 +1,17 @@
+.btn {
+    padding: $size2 $size3;
+    border: none;
+    border-radius: $size1;
+    color: white;
+    font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+        "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+
+.btn-primary {
+    background: $green;
+}
+
+.btn-secondary {
+    background: transparent;
+    border: 1px solid $white;
+}

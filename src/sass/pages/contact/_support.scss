@@ -1,0 +1,32 @@
+.contact__support {
+    display: grid;
+    padding: $size1;
+    &-card {
+        border-bottom: 1px solid $grey;
+        display: grid;
+        grid-template-columns: 1fr;
+        padding: $size6 0;
+        @media (min-width: $layout-breakpoint-small) {
+            grid-template-columns: 1fr 1fr;
+            gap: $size6;
+        }
+        h3 {
+            padding: $size4 0;
+            font-size: $size4;
+            width: 70%;
+            @media (min-width: $layout-breakpoint-small) {
+                font-size: $size5;
+            }
+        }
+        p {
+            font-size: $size3;
+            line-height: 2;
+            @media (min-width: $layout-breakpoint-small) {
+                // width: 45%;
+                font-size: $size4;
+                line-height: 1.6;
+                margin-left: $size1;
+            }
+        }
+    }
+}

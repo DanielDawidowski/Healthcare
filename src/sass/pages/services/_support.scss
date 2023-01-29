@@ -1,0 +1,123 @@
+.services__support {
+    &-title {
+        h1 {
+            padding: $size1;
+        }
+    }
+}
+
+.support__cards-horizontal {
+    display: grid;
+    width: 100%;
+
+    @media (min-width: $layout-breakpoint-xsmall) {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+}
+
+.horizontal-card {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    padding: $size1;
+    @media (min-width: $layout-breakpoint-small) {
+        margin: $size1 0;
+    }
+    img {
+        width: 100%;
+        height: 100%;
+    }
+    figcaption {
+        position: absolute;
+        bottom: 10%;
+        left: 10%;
+        small {
+            color: $white;
+            font-size: $size2;
+            font-weight: 700;
+            text-shadow: $black 0px 0px 0.5px;
+            width: 60%;
+            @media (min-width: $layout-breakpoint-small) {
+                font-size: $size3;
+            }
+            @media (min-width: $layout-breakpoint-medium) {
+                font-size: $size4;
+            }
+        }
+    }
+}
+
+.support__cards-vertical {
+    display: grid;
+    margin: $size4 0;
+}
+
+.vertical-card {
+    display: grid;
+    place-items: center;
+    max-width: 100%;
+    border: 1px solid $grey;
+    padding: $size1;
+    margin: 0 $size1;
+    @media (min-width: $layout-breakpoint-xsmall) {
+        display: flex;
+    }
+    img {
+        width: 100%;
+        height: 100%;
+        @media (min-width: $layout-breakpoint-medium) {
+            width: 30%;
+            object-fit: cover;
+        }
+    }
+    figcaption {
+        display: grid;
+        place-items: left;
+        width: 100%;
+
+        & > * {
+            padding: $size1;
+        }
+
+        small {
+            color: $black;
+            font-size: $size3;
+            font-weight: 700;
+            padding: $size1;
+            @media (min-width: $layout-breakpoint-small) {
+                font-size: $size3;
+            }
+            @media (min-width: $layout-breakpoint-medium) {
+                font-size: $size4;
+            }
+        }
+        p {
+            font-size: $size2;
+            @media (min-width: $layout-breakpoint-small) {
+                font-size: $size3;
+            }
+        }
+        div {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 4px;
+            @media (min-width: $layout-breakpoint-small) {
+                padding: $size5 $size1;
+            }
+            span {
+                background: $grey;
+                margin-right: 4px;
+                padding: 4px;
+                border-radius: $size1;
+                font-weight: 700;
+                font-size: $size2;
+                color: $darkTurquoise;
+                @media (min-width: $layout-breakpoint-small) {
+                    font-size: $size3;
+                }
+            }
+        }
+    }
+}

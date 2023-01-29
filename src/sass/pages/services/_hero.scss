@@ -1,0 +1,33 @@
+.services {
+    background: $turquoise;
+
+    &__hero {
+        display: grid;
+        padding: $size6 $size1;
+        width: 100%;
+        @media (min-width: $layout-breakpoint-small) {
+            padding: 10% 0;
+        }
+        &-title {
+            margin: $size5 0;
+            @media (min-width: $layout-breakpoint-small) {
+                margin: 10% 0;
+            }
+            h1 {
+                color: $white;
+                @media (min-width: $layout-breakpoint-small) {
+                    width: 60%;
+                }
+            }
+        }
+        &-search {
+            width: 100%;
+            input {
+                width: 100%;
+                padding: $size1;
+                border-radius: 4px;
+                border: none;
+            }
+        }
+    }
+}

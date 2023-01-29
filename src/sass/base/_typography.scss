@@ -1,0 +1,65 @@
+html {
+    line-height: 1.25;
+    body {
+        font-family: "Manrope", sans-serif;
+    }
+}
+
+// h1,
+// h2,
+// h3,
+// h4,
+// h5,
+// h6 {
+// }
+
+h1 {
+    font-size: $size5;
+    @media (min-width: $layout-breakpoint-small) and (max-width: $layout-breakpoint-medium) {
+        font-size: $size6;
+    }
+    @media (min-width: $layout-breakpoint-medium) {
+        font-size: $size7;
+    }
+}
+
+h2 {
+    text-transform: uppercase;
+}
+
+h3 {
+    font-size: $size3;
+    @media (min-width: $layout-breakpoint-medium) {
+        font-size: $size3;
+    }
+}
+
+h4 {
+    font-size: $size3;
+}
+
+h5 {
+    font-size: $size2;
+}
+
+h6 {
+    font-size: calc($size1 * 1.4);
+    font-style: italic;
+    color: $black;
+}
+
+b {
+    font-weight: 700;
+}
+
+small {
+    font-size: $size2;
+}
+
+p {
+    font-size: $size3;
+    text-align: justify;
+    @media (min-width: $layout-breakpoint-small) {
+        font-size: $size4;
+    }
+}

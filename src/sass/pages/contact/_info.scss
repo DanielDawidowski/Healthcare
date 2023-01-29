@@ -1,0 +1,23 @@
+.contact__info {
+    display: grid;
+    grid-template-columns: 1fr;
+    @media (min-width: $layout-breakpoint-small) {
+        grid-template-columns: 1fr 1fr;
+        gap: $size6;
+    }
+    &-accordion {
+        width: 100%;
+        padding: $size1 0;
+        margin: $size1;
+        border-bottom: 1px solid $grey;
+        @media (min-width: $layout-breakpoint-small) {
+            margin: $size2;
+        }
+        details {
+            p {
+                font-size: $size3;
+                margin: $size4 $size1;
+            }
+        }
+    }
+}
