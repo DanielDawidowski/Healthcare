@@ -50,3 +50,17 @@
         padding: $size2 0;
     }
 }
+
+.progress-bar {
+    position: fixed;
+    top: 65px;
+    left: 0;
+    right: 0;
+    height: 5px;
+    background: $green;
+    transform-origin: 0%;
+    @media (min-width: $layout-breakpoint-small) {
+        top: 55px;
+    }
+  }
+  
