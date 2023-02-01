@@ -10,12 +10,12 @@ const Layout = ({ children }) => {
     useEffect(() => {
         if (typeof window !== "undefined") {
             window.addEventListener("scroll", () =>
-                setSmall(window.pageYOffset > 100)
+                setSmall(window.pageYOffset > 10)
             );
         }
         return () =>
             window.removeEventListener("scroll", () =>
-                setSmall(window.pageYOffset < 100)
+                setSmall(window.pageYOffset < 10)
             );
     }, []);
     return (
