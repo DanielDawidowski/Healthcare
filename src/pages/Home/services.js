@@ -8,11 +8,7 @@ import Button from "../../components/button/button";
 const Services = () => {
     return (
         <section className="home__services">
-            <div
-                className="home__services-left"
-                animate={{ opacity: 1 }}
-                transition={{ duration: 0.6, ease: [0.6, 0.05, -0.01, 0.9] }}
-            >
+            <div className="home__services-left">
                 <div className="services__card">
                     <div className="services__card-header">
                         <img src={Service2Img} alt="avatar" />
