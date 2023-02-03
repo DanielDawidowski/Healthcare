@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { motion } from "framer-motion";
 
 function SearchBar({ placeholder, data, setShowInput, showInput }) {
     const [filteredData, setFilteredData] = useState([]);
@@ -21,7 +22,9 @@ function SearchBar({ placeholder, data, setShowInput, showInput }) {
     return (
         <div className="search">
             <div className="searchInputs">
-                <input
+                <motion.input
+                    initial={{ width: 0 }}
+                    animate={{ width: "100%", transition: { duration: 0.5 } }}
                     type="text"
                     placeholder={placeholder}
                     value={wordEntered}

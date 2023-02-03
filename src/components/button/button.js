@@ -1,10 +1,14 @@
 import React from "react";
+import { motion } from "framer-motion";
 
 const Button = ({ primary, title }) => {
     return (
-        <button className={`btn ${primary ? "btn-primary" : "btn-secondary"}`}>
+        <motion.button
+            whileHover={{ scale: 1.1 }}
+            className={`btn ${primary ? "btn-primary" : "btn-secondary"}`}
+        >
             {title}
-        </button>
+        </motion.button>
     );
 };
 

@@ -1,10 +1,49 @@
 import React, { useState } from "react";
 // import { useHistory } from "react-router-dom";
+
 import { AnimatePresence, motion } from "framer-motion";
 import GlassIcon from "../../assets/SVG/glass.svg";
 import LocationIcon from "../../assets/SVG/location.svg";
 import SearchBar from "../../components/search/search";
 import BookData from "../../data.json";
+
+const item = {
+    hidden: {
+        opacity: 0,
+        y: -100
+    },
+    show: {
+        opacity: 1,
+        y: 0,
+        transition: {
+            ease: [0.6, 0.01, 0.05, 0.95],
+            duration: 2.6
+        }
+    },
+    exit: {
+        opacity: 0,
+        y: -100,
+        transition: {
+            ease: "easeInOut",
+            duration: 0.8
+        }
+    }
+};
+
+//Variants
+const variants = {
+    active: {
+        x: "-20px"
+    },
+    inActive: {
+        x: "20px"
+    },
+    show: {
+        transition: {
+            staggerChildren: 0.15
+        }
+    }
+};
 
 const Menu = ({ grid = false, toggleMenu, setToggleMenu }) => {
     const [showInput, setShowInput] = useState(false);
@@ -17,37 +56,42 @@ const Menu = ({ grid = false, toggleMenu, setToggleMenu }) => {
     // };
 
     return (
-        <motion.div className={grid ? "menu-grid" : "menu"}>
-            <ul>
-                <li>
+        <motion.div
+            className={grid ? "menu-grid" : "menu"}
+            variants={variants}
+            initial="hidden"
+            animate="show"
+            exit="exit"
+        >
+            <motion.ul>
+                <motion.li variants={item} whileHover={{ scale: 1.1 }}>
                     <a href="/about">About</a>
-                </li>
-                <li>
+                </motion.li>
+                <motion.li variants={item} whileHover={{ scale: 1.1 }}>
                     <a href="/services">Services</a>
-                </li>
-                <li>
+                </motion.li>
+                <motion.li variants={item} whileHover={{ scale: 1.1 }}>
                     <a href="/info">Patient Information</a>
-                </li>
-                <li>
+                </motion.li>
+                <motion.li variants={item} whileHover={{ scale: 1.1 }}>
                     <a href="/events">Events</a>
-                </li>
-                <li>
+                </motion.li>
+                <motion.li variants={item} whileHover={{ scale: 1.1 }}>
                     <a href="/contact">Contact</a>
-                </li>
-            </ul>
-            <ul>
-                <li>
+                </motion.li>
+            </motion.ul>
+            <motion.ul>
+                <motion.li variants={item} whileHover={{ scale: 1.1 }}>
                     <img src={LocationIcon} alt="Location Icon" />
-                </li>
+                </motion.li>
                 <AnimatePresence>
-                    <motion.li className="search">
+                    <motion.li
+                        variants={item}
+                        className="search"
+                        whileHover={{ scale: 1.1 }}
+                    >
                         {showInput && (
-                            <SearchBar
-                                placeholder="Search"
-                                data={BookData}
-                                setShowInput={setShowInput}
-                                showInput={showInput}
-                            />
+                            <SearchBar placeholder="Search" data={BookData} />
                         )}
                         <motion.img
                             src={GlassIcon}
@@ -56,7 +100,7 @@ const Menu = ({ grid = false, toggleMenu, setToggleMenu }) => {
                         />
                     </motion.li>
                 </AnimatePresence>
-            </ul>
+            </motion.ul>
         </motion.div>
     );
 };

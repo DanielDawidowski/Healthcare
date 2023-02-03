@@ -38,17 +38,13 @@ input:focus {
     height: 30px;
     display: flex;
     align-items: center;
-    color: black;
+    color: $black;
 }
 
 .dataItem h5 {
     margin-left: 10px;
 }
 
-a {
-    text-decoration: none;
-}
-
-a:hover {
+.dataItem a:hover {
     background-color: lightgrey;
 }

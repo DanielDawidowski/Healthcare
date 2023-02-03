@@ -9,68 +9,17 @@ import News from "./Home/news";
 import Apps from "./Home/apps";
 import Feedback from "./Home/feedback";
 
-const cardVariants = {
-    offscreen: {
-        y: -100,
-        opacity: 0
-    },
-    onscreen: {
-        y: 0,
-        opacity: 1,
-        transition: {
-            type: "spring",
-            bounce: 0.4,
-            duration: 0.8
-        }
-    }
-};
-
 const Home = () => {
     const scrollRef = useRef(null);
+
     return (
-        <Layout ref={scrollRef} style={{ overflow: "scroll" }}>
+        <Layout>
+            <Hero scrollRef={scrollRef} />
+            <Info scrollRef={scrollRef} />
+            <Services scrollRef={scrollRef} />
+            <Support scrollRef={scrollRef} />
+            <News scrollRef={scrollRef} />
             <motion.div
-                className="card-container"
-                initial={{ opacity: 0, y: -100 }}
-                whileInView={{ opacity: 1, y: 0, transition: { duration: 1 } }}
-                viewport={{ root: scrollRef }}
-            >
-                <Hero />
-            </motion.div>
-            <motion.div
-                className="card-container"
-                initial={{ opacity: 0, y: -100 }}
-                whileInView={{ opacity: 1, y: 0, transition: { duration: 1 } }}
-                viewport={{ root: scrollRef }}
-            >
-                <Info />
-            </motion.div>
-            <motion.div
-                className="card-container"
-                initial={{ opacity: 0, y: -100 }}
-                whileInView={{ opacity: 1, y: 0, transition: { duration: 1 } }}
-                viewport={{ root: scrollRef }}
-            >
-                <Services />
-            </motion.div>
-            <motion.div
-                className="card-container"
-                initial={{ opacity: 0, y: -100 }}
-                whileInView={{ opacity: 1, y: 0, transition: { duration: 1 } }}
-                viewport={{ root: scrollRef }}
-            >
-                <Support />
-            </motion.div>
-            <motion.div
-                className="card-container"
-                initial={{ opacity: 0, y: -100 }}
-                whileInView={{ opacity: 1, y: 0, transition: { duration: 1 } }}
-                viewport={{ root: scrollRef }}
-            >
-                <News />
-            </motion.div>
-            <motion.div
-                className="card-container"
                 initial={{ opacity: 0, y: -100 }}
                 whileInView={{ opacity: 1, y: 0, transition: { duration: 1 } }}
                 viewport={{ root: scrollRef }}
@@ -78,7 +27,6 @@ const Home = () => {
                 <Apps />
             </motion.div>
             <motion.div
-                className="card-container"
                 initial={{ opacity: 0, y: -100 }}
                 whileInView={{ opacity: 1, y: 0, transition: { duration: 1 } }}
                 viewport={{ root: scrollRef }}

@@ -1,4 +1,5 @@
 import React from "react";
+import { motion } from "framer-motion";
 import Img1 from "../../assets/Images/hero/home-info1.png";
 import Img2 from "../../assets/Images/hero/home-info2.png";
 import Img3 from "../../assets/Images/hero/home-info3.png";
@@ -21,26 +22,85 @@ const infoArray = [
     }
 ];
 
-const Info = () => {
+const Info = ({ scrollRef }) => {
     return (
         <section className="home__info container">
             <div className="title-divider">
-                <h2>smart & hassle-free</h2>
-                <hr />
+                <motion.h2
+                    initial={{ opacity: 0, x: -20 }}
+                    whileInView={{
+                        opacity: 1,
+                        x: 0,
+                        transition: {
+                            type: "spring",
+                            stiffness: 200,
+                            delay: 1.6,
+                            duration: 1.6
+                        }
+                    }}
+                    viewport={{
+                        root: scrollRef
+                    }}
+                >
+                    smart & hassle-free
+                </motion.h2>
+                <motion.hr
+                    initial={{ opacity: 0, width: 0 }}
+                    whileInView={{
+                        opacity: 1,
+                        width: "85%",
+                        transition: { duration: 2 }
+                    }}
+                    viewport={{
+                        root: scrollRef
+                    }}
+                />
             </div>
             <div className="home__info-title">
-                <h1>A friendlier healthcare experience</h1>
+                <motion.h1
+                    initial={{ opacity: 0, x: -20 }}
+                    whileInView={{
+                        opacity: 1,
+                        x: 0,
+                        transition: {
+                            type: "spring",
+                            stiffness: 200,
+                            delay: 0.6,
+                            duration: 0.6
+                        }
+                    }}
+                    viewport={{
+                        root: scrollRef
+                    }}
+                >
+                    A friendlier healthcare experience
+                </motion.h1>
             </div>
-            <div className="home__info-cards">
+            <motion.div className="home__info-cards">
                 {infoArray.map((el, i) => (
-                    <figure key={i} className="home__info-card">
+                    <motion.figure
+                        key={i}
+                        className="home__info-card"
+                        initial={{ opacity: 0, y: -10 }}
+                        whileInView={{
+                            y: 0,
+                            opacity: 1,
+                            transition: {
+                                delay: 0.5,
+                                duration: 0.6
+                            }
+                        }}
+                        viewport={{
+                            root: scrollRef
+                        }}
+                    >
                         <img src={el.img} alt={el.title} />
                         <figcaption>
                             <b>{el.title}</b>
                         </figcaption>
-                    </figure>
+                    </motion.figure>
                 ))}
-            </div>
+            </motion.div>
         </section>
     );
 };
